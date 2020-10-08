@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://kit.fontawesome.com/163d94e0e1.js" crossorigin="anonymous"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            padding: 7px;
+            border: 1px solid black;
+            text-align: center;
+            position: relative;
+        }
+
+        .green {
+            color: green;
+            font-size: 20px;
+        }
+
+        .red {
+            color: red;
+            font-size: 20px;
+            opacity: 0;
+        }
+
+        .blue {
+            background: #20409a;
+            color: white;
+            font-weight: bold;
+        }
+
+        th:first-of-type {
+            background: white;
+        }
+
+        .section-row td {
+            border: none;
+            background: #20409a;
+        }
+
+        @media(max-width: 480px) {
+            .green, .red, .blue, th, td {
+                font-size: 12px !important;
+            }
+        }
+
+        @media(max-width: 385px) {
+            .green, .red, .blue, th, td {
+                font-size: 9px !important;
+            }
+        }
+
+        @keyframes tip-anim {
+            from {     transform: scale(0) translateX(-50%);}
+            to {     transform: scale(1) translateX(-50%);}
+        }
+
+
+
+        .tool-tip {
+            position: absolute;
+            padding: 10px 10px 20px 10px;
+            width: 200px;
+            text-align: center;
+            background: #20409a;
+            border: 1px solid black;
+            color: white;
+            top: 0;
+            border-radius: 5px;
+            z-index: 2;
+            font-size: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            visibility: hidden;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 60% 90%, 50% 100%, 40% 90%, 0 90%);
+        }
+
+        .tool-tip.isVisible {
+            visibility: visible !important;
+            animation-name: tip-anim;
+            animation-duration: .75s;
+        }
+
+        .show-tip {
+            padding-left: 5px;
+            cursor: pointer;
+        }
+
+        i::before {
+            color: #20409a;
+            font-size: 15px;
+        }
+
+        .white-tip i::before {
+            color: #ffffff;
+        }
+
+
+
+        @media(min-width:768px) {
+            td:hover .tool-tip {
+                visibility: visible;
+                animation-name: tip-anim;
+                animation-duration: .75s;
+            }
+        }
+
+        /*.show-tip:hover + .tool-tip {*/
+        /*    display: block;*/
+        /*    animation-name: tip-anim;*/
+        /*    animation-duration: .25s;*/
+        /*    animation-duration: .25s;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+
+
+
+<table>
+    <tr>
+        <th></th>
+        <th>$99 <br/>Start up</th>
+        <th>$249 <br/> Small Business</th>
+        <th>$499 <br/> Enterprise</th>
+    </tr>
+    <!-- ************** Setup Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>Setup</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>Setup Fee</td>
+        <td>$99</td>
+        <td>$500</td>
+        <td>$750</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="setup" data-tipData="databaseSetup"> Database / URL setup <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+        <td class="green" >&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td> Import LEP, Customers, Interpreters, Rates</td>
+        <td class="red"></td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td> 4 hours online personalized training</td>
+        <td class="red"></td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td>Quickbooks desktop configuration</td>
+        <td class="red"></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="setup" data-tipData="additionalTraining">Additional Training <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span>  <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span>  <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span>  <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+    </tr>
+<!-- ************** Core Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>Core</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="core" data-tipData="">   First 50 jobs </span></td>
+        <td>  No cost.  $2.50 per request over 50 </td>
+        <td>  No cost.  $0.50 per request over 50 </td>
+        <td>No cost.  Call for pricing for request over 50 </td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="core" data-tipData="yourOwnDatabase" >Your own database <span class="show-tip"><i class="far fa-question-circle"></i></span> </td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="core" data-tipData="">HIPPA compliance </td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="core" data-tipData=""> User security based on roles</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="core" data-tipData=""> User security based on roles</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="core" data-tipData="">  Excel Export</td>
+        <td class="red"></td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="core" data-tipData="">Unlimited File Attachements</td>
+        <td class="red"></td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="core" data-tipData="includesTestSite">Includes a test/training site <span class="show-tip"><i class="far fa-question-circle"></i></span> </td>
+        <td class="red"></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="core" data-tipData="multipleInstances"> Multiple Instances <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red"></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="core" data-tipData="dedicatedDatabase">Dedicated Database and App Servers <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red"></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="core" data-tipData="integrateWithCloud">Intergrate with your own cloud storage <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="core" data-tipData="useOwnUrl">Use your own URL<span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span><span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+    </tr>
+
+    <!-- ************** Scheduling Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>Scheduling</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="scheduling" data-tipData="calendarView">Calendar View <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="scheduling" data-tipData="">Advanced Filtering</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="scheduling" data-tipData="">Email Notification to available Interpreters</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="scheduling" data-tipData="emailNotificationClients">Email Notification to clients <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="scheduling" data-tipData="metaDataTags">Meta data tags <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="scheduling" data-tipData="colorTags">Color Tags <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="scheduling" data-tipData="setQualifications"> Set qualifications <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="scheduling" data-tipData="auditFields"> Audit Fields <span class="show-tip"><i class="far fa-question-circle"></i></span> </td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="scheduling" data-tipData="emailNotifications">  Email Notifications on client changes to job <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="scheduling" data-tipData="smsNotifications">SMS Notifications <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red">X</td>
+        <td>$0.01 a message</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="scheduling" data-tipData="excelImport"> Excel Import <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td>Coming soon</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="scheduling" data-tipData="">Dashboard Visuals</td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td>Coming soon</td>
+    </tr>
+
+    <!-- ************** Interpreter assignments Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>Interpreter Assignments</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="interpreterAssignments" data-tipData="">Email Notifications to assigned Interper</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="interpreterAssignments" data-tipData="">Filter Double Booked</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="interpreterAssignments" data-tipData="">FIlter Banned Interpreters from Client</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="interpreterAssignments" data-tipData=""> Filter Banned Intepreters from LEP</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="interpreterAssignments" data-tipData=""> Filter on required attributes set by customer</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="interpreterAssignments" data-tipData=""> Filter on gender</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="interpreterAssignments" data-tipData="">Filter on interpreter availabity</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="interpreterAssignments" data-tipData="">Filter on distance</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="interpreterAssignments" data-tipData="">  Google maps intergrations</td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <!-- ************** Mobile Application Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>Mobile Application</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="mobileApplication" data-tipData="">Unlimited Interprerter Access</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="mobileApplication" data-tipData="acceptOpenJobs"> Ability to accept open qualified jobs <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="mobileApplication" data-tipData="digitallySignJobs"> Ablitiy to digitally sign jobs <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="mobileApplication" data-tipData=""> Ability to upload/scan timesheets</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="mobileApplication" data-tipData=""> Ability to view paycheck stubs</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="mobileApplication" data-tipData="">Ability to view jobs with a calendar view</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="mobileApplication" data-tipData="pushNotificationsVRI">Push notifications for VRI jobs <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="mobileApplication" data-tipData="pushOpenJobs">Push open jobs to Tiered interpreters <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="mobileApplication" data-tipData="">Push notifications on open jobs</td>
+        <td class="red">X</td>
+        <td> Coming soon</td>
+        <td> Coming soon</td>
+    </tr>
+
+    <!-- ************** Client Access Section **************** -->
+    <tr class="section-row">
+        <td class="blue" data-tipPosition="clientAccess" data-tipData="clientAccess"><strong>Client Access </strong>  <span class="show-tip white-tip"><i  class="far fa-question-circle"></i></span></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="clientAccess" data-tipData="">Unlimited Client Users</td>
+        <td class="red">X</td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="clientAccess" data-tipData="abilityScheduledJobs">Ability to scheduled jobs <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red">X</td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="clientAccess" data-tipData="">Ability to view schedules</td>
+        <td class="red">X</td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="clientAccess" data-tipData="">Ability add/delete client users</td>
+        <td class="red">X</td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="clientAccess" data-tipData="">Security based on permisssions</td>
+        <td class="red">X</td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="clientAccess" data-tipData="abilityViewInvoices">Ability to view invoices <span class="show-tip"><i class="far fa-question-circle"></i></span> </td>
+        <td class="red">X</td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="clientAccess" data-tipData="abilityVoidJobs">Ability to void jobs <span class="show-tip"><i class="far fa-question-circle"></i></span> </td>
+        <td class="red">X</td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="clientAccess" data-tipData="chatWithAdmin">Chat with Admin/Schedulers <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="clientAccess" data-tipData="">Dashboard Visuals</td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td>Coming soon</td>
+    </tr>
+
+    <!-- ************** Interpreter Portal Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>Interpreter Portal </strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="interpretorPortal" data-tipData=""> Unlimted Interpreter Users </td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="interpretorPortal" data-tipData="">Interpreters set their own availability </td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="interpretorPortal" data-tipData="">Chat with schedulers</td>
+        <td class="red">X</td>
+        <td>Coming soon</td>
+        <td>Coming soon</td>
+    </tr>
+
+    <!-- ************** Financials Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>Financials </strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData="abilityAddActuals"> Abillity to add actuals <span class="show-tip"><i class="far fa-question-circle"></i></span> </td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData="configurableRateCalculator">Highly configuable rate calculator <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData=""> Calculate interpreter pay</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData=""> Calculate invoices</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData="">Multiple invoice formats per customer</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData="">Edit invoices</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData="">Bulk invoices</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData="">Bulk Approvals</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData="">Invoice line items not related to a specific request</td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData=""> Audit trail for invoices</td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData=""> Advanced Accounts Receivable module</td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData="customInvoiceFormats">Custom invoice formats <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="financials" data-tipData="customBuiltRateEngine">  Custom built rate engine <span class="show-tip"><i class="far fa-question-circle"></i></span> </td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+    </tr>
+
+    <!-- ************** Administration Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>Administration </strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="administation" data-tipData=""> Unlimited Users</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="administation" data-tipData="">Unlimited Interpreters</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="administation" data-tipData="">Unlimited Customers</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="administation" data-tipData="">Unlimited Customer Locations database</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="administation" data-tipData=""> Unlimited LEPs</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="administation" data-tipData=""> Maintain Customer Profiles</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="administation" data-tipData="">Customize and edit emails/messages </td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="administation" data-tipData="">Maintain rates and activities </td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="administation" data-tipData="">Maintain LEPs in a database</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="administation" data-tipData="">CRM</td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td>Coming soon</td>
+    </tr>
+
+    <!-- ************** Reporting Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>Reporting </strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="reporting" data-tipData="">Scheduling reports </td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="reporting" data-tipData="">Financial reporting </td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="reporting" data-tipData="">  Productivity reporting </td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="reporting" data-tipData="">Advance Reporting </td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="reporting" data-tipData="">Advance Reporting </td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="reporting" data-tipData=""> Executive Dashboard with KPI reporting </td>
+        <td class="red">X</td>
+        <td>Coming soon</td>
+        <td>Coming soon</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="reporting" data-tipData="">Dashboard visualizations</td>
+        <td class="red">X</td>
+        <td>Coming soon</td>
+        <td>Coming soon</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="reporting" data-tipData="customReports">Custom reports <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+    </tr>
+
+    <!-- ************** HR Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>HR </strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="hr" data-tipData="">  Credentials Managements </td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="hr" data-tipData="">Customer Feedback </td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="hr" data-tipData=""> Customer Surveys </td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="hr" data-tipData=""> Quality Assurance feedback program</td>
+        <td class="red">X</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <!-- ************** Quickbooks Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>Quickbooks </strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="quickbooks" data-tipData="">Quickbooks Online</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="quickbooks" data-tipData="">Quickbooks Desktop (all versions)</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="quickbooks" data-tipData="">Push detailed invoices</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="quickbooks" data-tipData="">Push consolidated invoices</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="quickbooks" data-tipData="">Push interpreter vouchers</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <!-- ************** VRI Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>VRI </strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="vri" data-tipData="scheduledVri">Scheduled VRI <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="vri" data-tipData="onDemandVri">On Demand VRI <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+    </tr>
+
+    <!-- ************** Chat Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>Chat </strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="chat" data-tipData=""> Chat with clients</td>
+        <td class="red">X</td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="chat" data-tipData=""> Chat with interpreters</td>
+        <td class="red">X</td>
+        <td>Coming soon</td>
+        <td>Coming soon</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="chat" data-tipData=""> Video/Audio chat with interpreters</td>
+        <td class="red">X</td>
+        <td>Coming soon</td>
+        <td>Coming soon</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="chat" data-tipData="groupVideo"> Group Video/Audio chat with interpreters <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="red">X</td>
+        <td>Coming soon</td>
+        <td>Coming soon</td>
+    </tr>
+
+    <!-- ************** API Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>API</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td  data-tipPosition="api" data-tipData="fullAccessDatabase"> Full access to live replica database <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="api" data-tipData="accessAPI"> Access to API <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="api" data-tipData="">Custom interfaces</td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td class="green" data-tipPosition="dollar" data-tipData="contact"><span class="inserted-check">&#10004;</span><span>$</span> <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="api" data-tipData="insuranceEligibility">Insurance eligiblity lookup <span class="show-tip"><i class="far fa-question-circle"></i></span></td>
+        <td>Coming soon</td>
+        <td>Coming soon</td>
+        <td>Coming soon</td>
+    </tr>
+
+    <tr>
+        <td data-tipPosition="api" data-tipData="">Epic intergration </td>
+        <td>Coming soon</td>
+        <td>Coming soon</td>
+        <td>Coming soon</td>
+    </tr>
+
+    <!-- ************** Support Section **************** -->
+    <tr class="section-row">
+        <td class="blue"><strong>Support</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td  data-data-tipPosition="support" data-tipData=""> Email suppoort</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+
+    <tr>
+        <td data-data-tipPosition="support" data-tipData="">24/7 emergency phone support</td>
+        <td class="red">X</td>
+        <td class="green">&#10004;</td>
+        <td class="green">&#10004;</td>
+    </tr>
+</table>
+
+<script src="index.js"></script>
+</body>
+</html>
+
+box-shadow: 5px 10px #888888;
