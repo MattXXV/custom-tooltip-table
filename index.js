@@ -1,3 +1,4 @@
+const testingMode = true;
 //LSPWare pricing table development
 function insertTollTips() {
   const cells = document.querySelectorAll('td');
@@ -69,7 +70,7 @@ function resetToolTips() {
 const body = document.querySelector('body');
 
 //Only build table on pricing page
-if(body.classList.contains('page-id-319')) {
+if(testingMode && body.classList.contains('page-id-319')) {
   insertTollTips();
   showTips();
 }

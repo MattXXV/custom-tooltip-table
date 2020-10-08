@@ -1,5 +1,5 @@
-function PricingTable(table, showTableOnLoad, bodyClass) {
-  this.table = table;
+function PricingTable(testingMode, showTableOnLoad, bodyClass) {
+  this.testingMode = testingMode;
   this.showTableonLoad = showTableOnLoad;
   this.bodyClass = bodyClass;
 
@@ -80,33 +80,50 @@ function PricingTable(table, showTableOnLoad, bodyClass) {
     })
   };
 
-  this.initTable = function() {
+  this.comparePlansEvent = function() {
+    const comparePlans = document.querySelector('.compare-plans');
+    const bttnText = document.querySelector('.compare-plans .button-text');
+    const tableWrap = document.querySelector('.lsp-price-table-options');
+
+    comparePlans.addEventListener('click', function(e) {
+      e.preventDefault();
+      if(tableWrap.style.display === 'block') {
+        bttnText.textContent = "Compare Plans";
+        tableWrap.style.display = 'none';
+      } else {
+        bttnText.textContent = "Hide Plans";
+        tableWrap.style.display = 'block';
+      }
+    })
+  };
+
+  this.initTableProduction = function() {
     const body = document.querySelector('body');
     if(body.classList.contains(this.bodyClass)) {
-      let comparePlans = document.querySelector('.compare-plans');
-      let bttnText = document.querySelector('.compare-plans .button-text');
-      let tableWrap = document.querySelector('.lsp-price-table-options');
       this.buildToolTips();
       this.toolTipsEventHandler();
       this.hideAllTips();
       this.hideRedX();
-
-      comparePlans.addEventListener('click', function(e) {
-        e.preventDefault();
-        if(tableWrap.style.display === 'block') {
-          bttnText.textContent = "Compare Plans";
-          tableWrap.style.display = 'none';
-        } else {
-          bttnText.textContent = "Hide Plans";
-          tableWrap.style.display = 'block';
-        }
-      })
+      this.comparePlansEvent();
     }
+  };
+
+  this.initTableTestMode = function() {
+    this.buildToolTips();
+    this.toolTipsEventHandler();
+    this.hideAllTips();
+    this.hideRedX();
+    this.comparePlansEvent();
   }
+
 }
 
-const LSPWarePricingTable = new PricingTable('.lsp-price-table-options', false, 'page-id-319' );
+const LSPWarePricingTable = new PricingTable(false, false, 'page-id-319' );
 
 (function() {
-  LSPWarePricingTable.initTable();
+  if(LSPWarePricingTable.testingMode) {
+    LSPWarePricingTable.initTableTestMode();
+  } else {
+    LSPWarePricingTable.initTableProduction();
+  }
 })();
