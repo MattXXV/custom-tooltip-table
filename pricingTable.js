@@ -70,6 +70,7 @@ function PricingTable(testingMode, showTableOnLoad, bodyClass) {
 
     tips.forEach(function(d) {
       d.classList.remove('isVisible');
+      d.style.visibility = 'hidden';
     })
   };
 
@@ -98,6 +99,7 @@ function PricingTable(testingMode, showTableOnLoad, bodyClass) {
   };
 
   this.initTableProduction = function() {
+    console.log('inited')
     const body = document.querySelector('body');
     if(body.classList.contains(this.bodyClass)) {
       this.buildToolTips();
@@ -109,16 +111,16 @@ function PricingTable(testingMode, showTableOnLoad, bodyClass) {
   };
 
   this.initTableTestMode = function() {
+    console.log('inited test')
     this.buildToolTips();
     this.toolTipsEventHandler();
     this.hideAllTips();
     this.hideRedX();
-    this.comparePlansEvent();
   }
 
 }
 
-const LSPWarePricingTable = new PricingTable(false, false, 'page-id-319' );
+const LSPWarePricingTable = new PricingTable(true, true, 'page-id-319' );
 
 (function() {
   if(LSPWarePricingTable.testingMode) {
